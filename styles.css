@@ -1,13 +1,13 @@
 /* ----------------
    G-IA Soluciones
    Premium black + gold
-   ---------------- */
+---------------- */
 
 :root{
   --bg-1: #0b0b0b;
   --bg-2: #111214;
   --card: #0f1011;
-  --gold: #ffce54; /* tu dorado elegido */
+  --gold: #ffce54;
   --muted: #bfc4c7;
   --white: #f5f6f7;
   --glass: rgba(255,255,255,0.02);
@@ -15,7 +15,7 @@
   --radius: 12px;
 }
 
-*{box-sizing:border-box}
+*{box-sizing: border-box}
 body{
   margin:0;
   font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -107,7 +107,6 @@ body{
   transition: background 220ms ease, color 220ms ease;
 }
 
-/* Icon to left (emoji fallback) */
 .accordion-btn .icon{
   display:inline-flex;
   align-items:center;
@@ -120,12 +119,10 @@ body{
   font-size:18px;
 }
 
-/* Label */
 .accordion-btn .label{
   flex:1;
 }
 
-/* Chev icon */
 .accordion-btn .chev{
   width:22px;
   height:22px;
@@ -140,18 +137,26 @@ body{
 .accordion-btn:hover{
   background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
 }
-.accordion-btn:hover .chev{ stroke: var(--gold); transform: translateY(-1px); }
+.accordion-btn:hover .chev{
+  stroke: var(--gold);
+  transform: translateY(-1px);
+}
 
-/* Panel */
+/* -----------------------------
+   FIX: Accordion panel updated
+----------------------------- */
+
 .accordion-panel{
-  max-height:0;
-  overflow:hidden;
+  max-height: 0;
+  overflow: hidden;
   transition: max-height 420ms cubic-bezier(.2,.9,.2,1);
-  padding: 0 20px;
+  padding: 0 20px; /* laterales siempre */
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
 }
+
 .accordion-panel.open{
-  padding: 16px 20px 20px;
+  padding-top: 16px;
+  padding-bottom: 20px;
 }
 
 /* Panel content */
@@ -190,15 +195,13 @@ body{
   backdrop-filter: blur(6px);
 }
 
-/* Contact label */
 .contact-label{
   color:var(--muted);
   font-weight:600;
   margin-right:8px;
-  display:none; /* hidden on small view, we use buttons */
+  display:none;
 }
 
-/* Contact button */
 .contact-btn{
   display:inline-flex;
   align-items:center;
@@ -213,7 +216,6 @@ body{
   transition: transform 150ms ease, background 150ms ease;
 }
 
-/* icon wrap with round outline */
 .icon-wrap{
   position:relative;
   width:40px;
@@ -223,7 +225,6 @@ body{
   justify-content:center;
 }
 
-/* outer circle stroke */
 .icon-circle{
   width:40px;
   height:40px;
@@ -234,33 +235,30 @@ body{
   border-radius:50%;
 }
 
-/* icon svg stroke */
 .icon-svg{
   width:18px;
   height:18px;
   stroke:var(--gold);
   stroke-width:1.6;
-  fill:none; /* no body, only outline */
+  fill:none;
   stroke-linecap:round;
   stroke-linejoin:round;
   position:absolute;
 }
 
-/* button text */
 .btn-text{
   font-size:15px;
   color:var(--white);
 }
 
-/* hover effects */
 .contact-btn:hover{
   transform: translateY(-3px);
 }
 .contact-btn:hover .icon-circle{
-  stroke: #ffd88a;
+  stroke:#ffd88a;
 }
 .contact-btn:hover .icon-svg{
-  stroke: #ffd88a;
+  stroke:#ffd88a;
 }
 
 /* Footer */
@@ -274,17 +272,17 @@ body{
 
 /* Responsive */
 @media (max-width:880px){
-  .container{ width: 94%; }
-  .header-inner{ padding: 0 8px; }
+  .container{ width:94%; }
+  .header-inner{ padding:0 8px; }
   .brand h1{ font-size:22px; }
   .contact-inner{ gap:12px; padding:8px; }
-  .btn-text{ display:none; } /* small screens: show only icons */
+  .btn-text{ display:none; }
   .contact-label{ display:none; }
 }
 
 @media (max-width:520px){
-  .accordion-btn{ padding:14px; font-size:15px;}
-  .accordion-btn .icon{ width:34px; height:34px;}
+  .accordion-btn{ padding:14px; font-size:15px; }
+  .accordion-btn .icon{ width:34px; height:34px; }
   .contact-bar{ bottom:12px; }
   .contact-inner{ padding:6px; }
 }
