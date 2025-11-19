@@ -1,7 +1,290 @@
-body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
+/* ----------------
+   G-IA Soluciones
+   Premium black + gold
+   ---------------- */
+
+:root{
+  --bg-1: #0b0b0b;
+  --bg-2: #111214;
+  --card: #0f1011;
+  --gold: #ffce54; /* tu dorado elegido */
+  --muted: #bfc4c7;
+  --white: #f5f6f7;
+  --glass: rgba(255,255,255,0.02);
+  --shadow: 0 8px 30px rgba(0,0,0,0.6);
+  --radius: 12px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Container */
+.container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* Header */
+.site-header{
+  padding: 32px 0 8px;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.brand h1{
+  margin:0;
+  font-weight:700;
+  font-size:28px;
+  color:var(--gold);
+  letter-spacing:0.6px;
+  text-shadow: 0 2px 12px rgba(255,206,84,0.08);
+}
+.subtitle{
+  margin-top:6px;
+  color:var(--muted);
+  font-weight:400;
+  font-size:14px;
+}
+
+/* Main */
+.main-content{
+  padding: 28px 0 120px;
+}
+
+/* Section title */
+.section-title{
+  text-align:center;
+  font-size:20px;
+  color:var(--gold);
+  margin: 8px 0 20px;
+  letter-spacing:0.4px;
+}
+
+/* ACCORDION - premium look */
+.accordion{
+  display:grid;
+  gap:14px;
+  grid-template-columns: 1fr;
+}
+
+/* item */
+.accordion-item{
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,206,84,0.08);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Button */
+.accordion-btn{
+  display:flex;
+  align-items:center;
+  width:100%;
+  gap:12px;
+  background: transparent;
+  border:0;
+  padding:18px 20px;
+  color:var(--white);
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+  text-align:left;
+  position:relative;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+/* Icon to left (emoji fallback) */
+.accordion-btn .icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background: rgba(255,255,255,0.02);
+  color:var(--gold);
+  font-size:18px;
+}
+
+/* Label */
+.accordion-btn .label{
+  flex:1;
+}
+
+/* Chev icon */
+.accordion-btn .chev{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:var(--muted);
+  stroke-width:2;
+  opacity:0.9;
+  transition: transform 250ms ease, stroke 200ms ease;
+}
+
+/* Hover */
+.accordion-btn:hover{
+  background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
+}
+.accordion-btn:hover .chev{ stroke: var(--gold); transform: translateY(-1px); }
+
+/* Panel */
+.accordion-panel{
+  max-height:0;
+  overflow:hidden;
+  transition: max-height 420ms cubic-bezier(.2,.9,.2,1);
+  padding: 0 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
+}
+.accordion-panel.open{
+  padding: 16px 20px 20px;
+}
+
+/* Panel content */
+.accordion-panel ul{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.accordion-panel li{
+  margin-bottom:8px;
+  font-size:15px;
+}
+
+/* CONTACT BAR fixed bottom */
+.contact-bar{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:18px;
+  display:flex;
+  justify-content:center;
+  pointer-events:auto;
+  z-index:999;
+}
+.contact-inner{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 999px;
+  padding:10px 18px;
+  border: 1px solid rgba(255,206,84,0.06);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+}
+
+/* Contact label */
+.contact-label{
+  color:var(--muted);
+  font-weight:600;
+  margin-right:8px;
+  display:none; /* hidden on small view, we use buttons */
+}
+
+/* Contact button */
+.contact-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--white);
+  background:transparent;
+  border:0;
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:600;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+/* icon wrap with round outline */
+.icon-wrap{
+  position:relative;
+  width:40px;
+  height:40px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* outer circle stroke */
+.icon-circle{
+  width:40px;
+  height:40px;
+  stroke:var(--gold);
+  stroke-width:1.6;
+  fill:none;
+  opacity:0.95;
+  border-radius:50%;
+}
+
+/* icon svg stroke */
+.icon-svg{
+  width:18px;
+  height:18px;
+  stroke:var(--gold);
+  stroke-width:1.6;
+  fill:none; /* no body, only outline */
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  position:absolute;
+}
+
+/* button text */
+.btn-text{
+  font-size:15px;
+  color:var(--white);
+}
+
+/* hover effects */
+.contact-btn:hover{
+  transform: translateY(-3px);
+}
+.contact-btn:hover .icon-circle{
+  stroke: #ffd88a;
+}
+.contact-btn:hover .icon-svg{
+  stroke: #ffd88a;
+}
+
+/* Footer */
+.site-footer{
+  margin-top:60px;
+  padding:26px 0 80px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Responsive */
+@media (max-width:880px){
+  .container{ width: 94%; }
+  .header-inner{ padding: 0 8px; }
+  .brand h1{ font-size:22px; }
+  .contact-inner{ gap:12px; padding:8px; }
+  .btn-text{ display:none; } /* small screens: show only icons */
+  .contact-label{ display:none; }
+}
+
+@media (max-width:520px){
+  .accordion-btn{ padding:14px; font-size:15px;}
+  .accordion-btn .icon{ width:34px; height:34px;}
+  .contact-bar{ bottom:12px; }
+  .contact-inner{ padding:6px; }
 }
