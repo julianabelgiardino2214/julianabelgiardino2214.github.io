@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   accordion.forEach(item => {
     const btn = item.querySelector('.accordion-btn');
     const panel = item.querySelector('.accordion-panel');
-    const chev = btn.querySelector('.chev');
 
     btn.addEventListener('click', () => {
       const open = btn.getAttribute('aria-expanded') === 'true';
@@ -39,8 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // rotate chev
         const chevLocal = btn.querySelector('.chev');
-        chevLocal.style.transform = 'rotate(180deg)';
-        chevLocal.style.stroke = getComputedStyle(document.documentElement).getPropertyValue('--gold').trim() || '#ffce54';
+        if (chevLocal) {
+          chevLocal.style.transform = 'rotate(180deg)';
+          chevLocal.style.stroke = getComputedStyle(document.documentElement).getPropertyValue('--gold').trim() || '#ffce54';
+        }
       }
     });
   });
