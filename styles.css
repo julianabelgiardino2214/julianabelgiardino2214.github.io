@@ -1,8 +1,4 @@
-/* ----------------
-   G-IA Soluciones
-   Premium black + gold
----------------- */
-
+/* ---------------- G-IA Soluciones Premium black + gold ---------------- */
 :root{
   --bg-1: #0b0b0b;
   --bg-2: #111214;
@@ -16,6 +12,7 @@
 }
 
 *{box-sizing: border-box}
+
 body{
   margin:0;
   font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -38,12 +35,14 @@ body{
 .site-header{
   padding: 32px 0 8px;
 }
+
 .header-inner{
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
 }
+
 .brand h1{
   margin:0;
   font-weight:700;
@@ -52,6 +51,7 @@ body{
   letter-spacing:0.6px;
   text-shadow: 0 2px 12px rgba(255,206,84,0.08);
 }
+
 .subtitle{
   margin-top:6px;
   color:var(--muted);
@@ -116,7 +116,9 @@ body{
   font-size:18px;
 }
 
-.accordion-btn .label{ flex:1; }
+.accordion-btn .label{
+  flex:1;
+}
 
 .accordion-btn .chev{
   width:22px;
@@ -131,6 +133,7 @@ body{
 .accordion-btn:hover{
   background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
 }
+
 .accordion-btn:hover .chev{
   stroke: var(--gold);
   transform: translateY(-1px);
@@ -156,6 +159,7 @@ body{
   color:var(--muted);
   line-height:1.6;
 }
+
 .accordion-panel li{
   margin-bottom:8px;
   font-size:15px;
@@ -184,7 +188,20 @@ body{
   backdrop-filter: blur(6px);
 }
 
-/* NOMBRE NUEVO */
+/* NUEVO ICONO WHATSAPP Y GMAIL */
+.whatsapp-icon{
+  stroke:#25D366;
+  fill:none;
+  stroke-width:1.8;
+}
+
+.gmail-icon{
+  stroke:#ff4c4c;
+  fill:none;
+  stroke-width:1.8;
+}
+
+/* NAME */
 .contact-name{
   color:var(--gold);
   font-weight:600;
@@ -224,15 +241,15 @@ body{
 }
 
 .icon-svg{
-  width:18px;
-  height:18px;
-  stroke:var(--gold);
-  stroke-width:1.6;
-  fill:none;
+  width:22px;
+  height:22px;
   position:absolute;
 }
 
-.contact-btn:hover{ transform: translateY(-3px); }
+.contact-btn:hover{
+  transform: translateY(-3px);
+}
+
 .contact-btn:hover .icon-circle,
 .contact-btn:hover .icon-svg{
   stroke:#ffd88a;
@@ -249,13 +266,26 @@ body{
 
 /* Responsive */
 @media (max-width:880px){
-  .contact-inner{ gap:12px; padding:8px; }
-  .btn-text{ display:none; }
-  .contact-name{ display:none; }
+  .contact-inner{
+    gap:12px;
+    padding:8px;
+  }
+  .btn-text{
+    display:none;
+  }
+  .contact-name{
+    display:none;
+  }
 }
 
 @media (max-width:520px){
-  .contact-bar{ bottom:12px; }
-  .contact-inner{ padding:6px; }
+  .contact-bar{
+    bottom:12px;
+  }
+  .contact-inner{
+    padding:6px;
+  }
 }
+
 /* refresh-fix-01 */
+
