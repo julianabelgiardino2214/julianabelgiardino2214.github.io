@@ -69,7 +69,7 @@ body{
 }
 
 .brand-logo{
-  width: 55px; /* tamaño original que vos querías */
+  width: 28px;   /* LOGO PEQUEÑO (pedido por vos) */
   height: auto;
   filter: drop-shadow(0 0 12px rgba(255,206,84,0.35));
   opacity: 0.95;
@@ -91,7 +91,7 @@ body{
     align-items: center;
   }
   .brand-logo{
-    width: 75px; /* original mobile */
+    width: 36px; /* pequeño también en mobile */
   }
 }
 
